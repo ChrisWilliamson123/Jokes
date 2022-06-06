@@ -8,15 +8,18 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    
+    private let fetcher = JokeFetcher()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
 
     @IBAction func didTapRandomJokeButton(_ sender: Any) {
-        print("Hello world")
+        fetcher.fetchRandomJoke { result in
+            print(result)
+        }
     }
 }
 
