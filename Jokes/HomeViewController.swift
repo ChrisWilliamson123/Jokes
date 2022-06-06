@@ -1,15 +1,9 @@
-//
-//  ViewController.swift
-//  Jokes
-//
-//  Created by Chris on 06/06/2022.
-//
-
 import UIKit
 
 class HomeViewController: UIViewController {
     
     private let fetcher = JokeFetcher()
+    private let viewModel = HomeViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,9 +11,21 @@ class HomeViewController: UIViewController {
 
 
     @IBAction func didTapRandomJokeButton(_ sender: Any) {
-        fetcher.fetchRandomJoke { result in
-            print(result)
+        fetcher.fetchRandomJoke { [weak self] result in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                let alert = self.createAlert(configuration: HomeViewModel.JokeAlertConfiguration.build(from: result))
+                self.present(alert, animated: true)
+            }
         }
+    }
+    
+    private func createAlert(configuration: HomeViewModel.JokeAlertConfiguration) -> UIAlertController {
+        let alert = UIAlertController(title: configuration.title, message: configuration.text, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            alert.dismiss(animated: true)
+        }))
+        return alert
     }
 }
 
