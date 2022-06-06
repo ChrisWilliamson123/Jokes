@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yNl-dS-gKa">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,34 +9,128 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Jokes-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Jokes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Jokes" id="BYZ-38-t0r" customClass="HomeViewController" customModule="Jokes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dd4-qC-Fpn">
-                                <rect key="frame" x="151.5" y="432.5" width="111.5" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Random Joke"/>
-                                <connections>
-                                    <action selector="didTapRandomJokeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eJ5-dG-LJA"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dOx-oV-4AS">
+                                <rect key="frame" x="151.5" y="417" width="111.5" height="62"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dd4-qC-Fpn">
+                                        <rect key="frame" x="0.0" y="0.0" width="111.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Random Joke"/>
+                                        <connections>
+                                            <action selector="didTapRandomJokeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eJ5-dG-LJA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZR-UT-TqN">
+                                        <rect key="frame" x="0.0" y="31" width="111.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Joke List"/>
+                                        <connections>
+                                            <segue destination="Hsj-xf-zln" kind="push" id="5ik-7v-dnw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dd4-qC-Fpn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ERx-Td-0ry"/>
-                            <constraint firstItem="dd4-qC-Fpn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N0g-Ly-2Md"/>
+                            <constraint firstItem="dOx-oV-4AS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0dR-vY-2Zu"/>
+                            <constraint firstItem="dOx-oV-4AS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NGC-G9-vpt"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Jokes" id="kUy-AQ-Zfo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="72" y="138"/>
+            <point key="canvasLocation" x="981.15942028985512" y="137.94642857142856"/>
+        </scene>
+        <!--Joke List-->
+        <scene sceneID="Kf5-Kt-l5m">
+            <objects>
+                <viewController title="Joke List" id="Hsj-xf-zln" customClass="JokeListViewController" customModule="Jokes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J3t-yX-g6e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OT0-ts-17g">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="5mF-EE-phT">
+                                    <rect key="frame" x="0.0" y="110.5" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r95-Be-2OL">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Load more"/>
+                                            <connections>
+                                                <action selector="didTapLoadMoreButton:" destination="Hsj-xf-zln" eventType="touchUpInside" id="sp8-Pg-OZ9"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="r95-Be-2OL" secondAttribute="bottom" id="Hjd-h6-iIJ"/>
+                                        <constraint firstItem="r95-Be-2OL" firstAttribute="leading" secondItem="5mF-EE-phT" secondAttribute="leading" id="e9e-Z2-r2j"/>
+                                        <constraint firstAttribute="trailing" secondItem="r95-Be-2OL" secondAttribute="trailing" id="o8a-sg-0KB"/>
+                                        <constraint firstItem="r95-Be-2OL" firstAttribute="top" secondItem="5mF-EE-phT" secondAttribute="top" id="zsU-8V-1fM"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="hMl-Hf-rqf">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hMl-Hf-rqf" id="G1R-iQ-gfU">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ADk-Vo-mSD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OT0-ts-17g" firstAttribute="leading" secondItem="ADk-Vo-mSD" secondAttribute="leading" id="Ocl-v2-QAY"/>
+                            <constraint firstItem="ADk-Vo-mSD" firstAttribute="trailing" secondItem="OT0-ts-17g" secondAttribute="trailing" id="a4s-is-ps5"/>
+                            <constraint firstItem="ADk-Vo-mSD" firstAttribute="bottom" secondItem="OT0-ts-17g" secondAttribute="bottom" id="awU-9L-S7J"/>
+                            <constraint firstItem="OT0-ts-17g" firstAttribute="top" secondItem="ADk-Vo-mSD" secondAttribute="top" id="rsi-cv-fDM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Joke List" id="CMf-Ih-dMO"/>
+                    <connections>
+                        <outlet property="tableView" destination="OT0-ts-17g" id="09B-il-fC3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5gc-Ae-EXQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1953.6231884057972" y="154.6875"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wV7-DE-m4r">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yNl-dS-gKa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DIa-x0-zJQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="LuE-u8-s8X"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q0g-J5-8Q9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="71.014492753623188" y="137.94642857142856"/>
         </scene>
     </scenes>
     <resources>
