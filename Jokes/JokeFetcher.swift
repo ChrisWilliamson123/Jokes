@@ -2,14 +2,15 @@ import Foundation
 
 struct JokeFetcher {
     private static let baseUrl: String = "http://api.icndb.com"
-    private let urlSession: URLSession
+
+    private let networking: Networking
     
-    init(urlSession: URLSession = URLSession.shared) {
-        self.urlSession = urlSession
+    init(networking: Networking = Networking()) {
+        self.networking = networking
     }
 
     func fetchRandomJoke(completion: @escaping (Result<Joke, Error>) -> ()) {
-        urlSession.fetchData(for: URL(string: "\(Self.baseUrl)/jokes/random?exclude=[explicit]")!) { (result: Result<SingleJokeResponse, Error>) in
+        networking.fetchData(for: URL(string: "\(Self.baseUrl)/jokes/random?exclude=[explicit]")!) { (result: Result<SingleJokeResponse, Error>) in
             switch result {
             case .success(let response):
                 completion(.success(response.value))

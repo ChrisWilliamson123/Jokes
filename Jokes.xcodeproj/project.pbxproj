@@ -14,13 +14,14 @@
 		8327E5DF284E566F00957F17 /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327E5DE284E566F00957F17 /* URLSession+Extensions.swift */; };
 		8327E5E2284E569400957F17 /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327E5E1284E569400957F17 /* Joke.swift */; };
 		8327E5E4284E56A700957F17 /* SingleJokeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327E5E3284E56A700957F17 /* SingleJokeResponse.swift */; };
+		8327E5E8284E589D00957F17 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327E5E7284E589D00957F17 /* Networking.swift */; };
 		835E3698284E4E5F00A0B5C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835E3697284E4E5F00A0B5C0 /* AppDelegate.swift */; };
 		835E369A284E4E5F00A0B5C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835E3699284E4E5F00A0B5C0 /* SceneDelegate.swift */; };
 		835E369C284E4E5F00A0B5C0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835E369B284E4E5F00A0B5C0 /* HomeViewController.swift */; };
 		835E369F284E4E5F00A0B5C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 835E369D284E4E5F00A0B5C0 /* Main.storyboard */; };
 		835E36A1284E4E6000A0B5C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 835E36A0284E4E6000A0B5C0 /* Assets.xcassets */; };
 		835E36A4284E4E6000A0B5C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 835E36A2284E4E6000A0B5C0 /* LaunchScreen.storyboard */; };
-		835E36AF284E4E6100A0B5C0 /* JokesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835E36AE284E4E6100A0B5C0 /* JokesTests.swift */; };
+		835E36AF284E4E6100A0B5C0 /* JokeFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835E36AE284E4E6100A0B5C0 /* JokeFetcherTests.swift */; };
 		835E36B9284E4E6100A0B5C0 /* JokesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835E36B8284E4E6100A0B5C0 /* JokesUITests.swift */; };
 		835E36BB284E4E6100A0B5C0 /* JokesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835E36BA284E4E6100A0B5C0 /* JokesUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		8327E5DE284E566F00957F17 /* URLSession+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extensions.swift"; sourceTree = "<group>"; };
 		8327E5E1284E569400957F17 /* Joke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
 		8327E5E3284E56A700957F17 /* SingleJokeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleJokeResponse.swift; sourceTree = "<group>"; };
+		8327E5E7284E589D00957F17 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		835E3694284E4E5F00A0B5C0 /* Jokes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jokes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		835E3697284E4E5F00A0B5C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		835E3699284E4E5F00A0B5C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,7 +66,7 @@
 		835E36A3284E4E6000A0B5C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		835E36A5284E4E6000A0B5C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		835E36AA284E4E6100A0B5C0 /* JokesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JokesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		835E36AE284E4E6100A0B5C0 /* JokesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesTests.swift; sourceTree = "<group>"; };
+		835E36AE284E4E6100A0B5C0 /* JokeFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeFetcherTests.swift; sourceTree = "<group>"; };
 		835E36B4284E4E6100A0B5C0 /* JokesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JokesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		835E36B8284E4E6100A0B5C0 /* JokesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesUITests.swift; sourceTree = "<group>"; };
 		835E36BA284E4E6100A0B5C0 /* JokesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				835E36A2284E4E6000A0B5C0 /* LaunchScreen.storyboard */,
 				835E36A5284E4E6000A0B5C0 /* Info.plist */,
 				8327E5DE284E566F00957F17 /* URLSession+Extensions.swift */,
+				8327E5E7284E589D00957F17 /* Networking.swift */,
 			);
 			path = Jokes;
 			sourceTree = "<group>";
@@ -163,7 +166,7 @@
 		835E36AD284E4E6100A0B5C0 /* JokesTests */ = {
 			isa = PBXGroup;
 			children = (
-				835E36AE284E4E6100A0B5C0 /* JokesTests.swift */,
+				835E36AE284E4E6100A0B5C0 /* JokeFetcherTests.swift */,
 			);
 			path = JokesTests;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				8327E5DF284E566F00957F17 /* URLSession+Extensions.swift in Sources */,
 				835E369C284E4E5F00A0B5C0 /* HomeViewController.swift in Sources */,
 				8327E5E4284E56A700957F17 /* SingleJokeResponse.swift in Sources */,
+				8327E5E8284E589D00957F17 /* Networking.swift in Sources */,
 				8327E5E2284E569400957F17 /* Joke.swift in Sources */,
 				835E3698284E4E5F00A0B5C0 /* AppDelegate.swift in Sources */,
 				8327E5DD284E536800957F17 /* JokeFetcher.swift in Sources */,
@@ -440,7 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				835E36AF284E4E6100A0B5C0 /* JokesTests.swift in Sources */,
+				835E36AF284E4E6100A0B5C0 /* JokeFetcherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
