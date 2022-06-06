@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,5 +15,8 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func didTapRandomJokeButton(_ sender: Any) {
+        print("Hello world")
+    }
 }
 
