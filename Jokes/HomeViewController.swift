@@ -5,11 +5,6 @@ class HomeViewController: UIViewController {
     private let fetcher = JokeFetcher()
     private let viewModel = HomeViewModel()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-
     @IBAction func didTapRandomJokeButton(_ sender: Any) {
         fetcher.fetchRandomJoke { [weak self] result in
             guard let self = self else { return }
