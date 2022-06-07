@@ -29,7 +29,7 @@ struct JokeRequestConfiguration {
     }
     
     var url: URL {
-        URL(string: "http://api.icndb.com/jokes/random/\(count)?exclude=[explicit]&\(mainCharacterString)")!
+        URL(string: "http://api.icndb.com/jokes/random/\(count)?exclude=[explicit]&escape=javascript&\(mainCharacterString)")!
     }
 
     private var mainCharacterString: String {
