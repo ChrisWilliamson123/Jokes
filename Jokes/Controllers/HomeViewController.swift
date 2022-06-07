@@ -8,14 +8,9 @@ class HomeViewController: UIViewController {
         fetcher.fetchJokes(using: JokeRequestConfiguration(count: 1)) { [weak self] result in
             guard let self = self else { return }
             
-            let singleJokeResult: Result<Joke, Error>
-            switch result {
-            case .success(let jokes): singleJokeResult = .success(jokes[0])
-            case .failure(let error): singleJokeResult = .failure(error)
-            }
-            
             DispatchQueue.main.async {
-                let alert = self.createAlert(configuration: JokeAlertConfiguration.build(from: singleJokeResult))
+                guard let alertConfig = try? JokeAlertConfiguration.build(from: result) else { return }
+                let alert = self.createAlert(configuration: alertConfig)
                 self.present(alert, animated: true)
             }
         }
