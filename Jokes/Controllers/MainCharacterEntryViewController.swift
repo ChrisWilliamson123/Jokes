@@ -36,10 +36,29 @@ class MainCharacterEntryViewController: UIViewController {
         switch validatedResult {
         case .success(let mainCharacter):
             entryErrorLabel.isHidden = true
+            let requestConfig = JokeRequestConfiguration(count: 1, mainCharacter: mainCharacter)
+            fetcher.fetchJokes(using: requestConfig) { [weak self] result in
+                guard let self = self else { return }
+                
+                guard let alertConfig = try? JokeAlertConfiguration.build(from: result) else { return }
+                        
+                DispatchQueue.main.async {
+                    let alert = self.createAlert(configuration: alertConfig)
+                    self.present(alert, animated: true)
+                }
+            }
         case .failure(let error):
             entryErrorLabel.text = error.description
             entryErrorLabel.isHidden = false
         }
+    }
+    
+    private func createAlert(configuration: JokeAlertConfiguration) -> UIAlertController {
+        let alert = UIAlertController(title: configuration.title, message: configuration.text, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            alert.dismiss(animated: true)
+        }))
+        return alert
     }
 }
 

@@ -29,6 +29,12 @@ struct JokeRequestConfiguration {
     }
     
     var url: URL {
-        URL(string: "http://api.icndb.com/jokes/random/\(count)?exclude=[explicit]")!
+        URL(string: "http://api.icndb.com/jokes/random/\(count)?exclude=[explicit]&\(mainCharacterString)")!
     }
+
+    private var mainCharacterString: String {
+        guard let mainCharacter = mainCharacter else { return "" }
+        return "firstName=\(mainCharacter.firstName)&lastName=\(mainCharacter.lastName)"
+    }
+    
 }
