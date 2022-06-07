@@ -11,25 +11,25 @@ class JokeFetcherTests: XCTestCase {
         networking = NetworkingMock()
     }
 
-    func testFetchRandomJoke_givenNetworkFetchesValidData_completesWithJokeObject() {
+    func testFetchJokes_givenNetworkFetchesValidData_completesWithJokesObject() {
         networking.nextResponse = .success(buildJokeResponse())
         
-        let expectedJoke = Joke(id: 1, joke: "A really funny joke", categories: [])
+        let expectedJokes = [Joke(id: 1, joke: "A really funny joke", categories: [])]
         
         let fetcher = JokeFetcher(networking: networking)
-        fetcher.fetchRandomJoke { result in
+        fetcher.fetchJokes(using: JokeRequestConfiguration(count: 1)) { result in
             switch result {
-            case .success(let joke): XCTAssertEqual(joke, expectedJoke)
+            case .success(let jokes): XCTAssertEqual(jokes, expectedJokes)
             case .failure: XCTFail("Expected fetch to succeed")
             }
         }
     }
     
-    func testFetchRandomJoke_givenNetworkFails_completesWithError() {
+    func testFetchJokes_givenNetworkFails_completesWithError() {
         networking.nextResponse = .failure(NSError(domain: "", code: 500, userInfo: [ NSLocalizedDescriptionKey: "Server error"]))
         
         let fetcher = JokeFetcher(networking: networking)
-        fetcher.fetchRandomJoke { result in
+        fetcher.fetchJokes(using: JokeRequestConfiguration(count: 1)) { result in
             switch result {
             case .success: XCTFail("Expected fetch to fail")
             case .failure(let error): XCTAssertEqual(error.localizedDescription, "Server error")
@@ -37,7 +37,7 @@ class JokeFetcherTests: XCTestCase {
         }
     }
     
-    private func buildJokeResponse() -> SingleJokeResponse {
-        SingleJokeResponse(type: "success", value: Joke(id: 1, joke: "A really funny joke", categories: []))
+    private func buildJokeResponse() -> MultipleJokeResponse {
+        MultipleJokeResponse(type: "success", value: [Joke(id: 1, joke: "A really funny joke", categories: [])])
     }
 }
