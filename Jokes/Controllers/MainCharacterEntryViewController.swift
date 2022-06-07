@@ -2,14 +2,18 @@ import UIKit
 
 class MainCharacterEntryViewController: UIViewController {
 
-    @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet private weak var searchBar: UISearchBar!
+    @IBOutlet private weak var searchButton: UIButton!
+    @IBOutlet private weak var entryErrorLabel: UILabel!
+    
+    private let fetcher = JokeFetcher()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         searchButton.isEnabled = false
         searchBar.delegate = self
+        entryErrorLabel.isHidden = true
     }
     
 
@@ -27,8 +31,15 @@ class MainCharacterEntryViewController: UIViewController {
         let text = searchBar.text
         guard let text = text else { return }
 
-        let validated = MainCharacterEntryValidator().validateEntry(text)
-        print(validated)
+        let validatedResult = MainCharacterEntryValidator().validateEntry(text)
+        
+        switch validatedResult {
+        case .success(let mainCharacter):
+            entryErrorLabel.isHidden = true
+        case .failure(let error):
+            entryErrorLabel.text = error.description
+            entryErrorLabel.isHidden = false
+        }
     }
 }
 

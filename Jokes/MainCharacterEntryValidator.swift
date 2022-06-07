@@ -10,11 +10,18 @@ struct MainCharacterEntryValidator {
         return .success(MainCharacter(firstName: words[0], lastName: words[1]))
     }
     
-    enum ValidationError: Error {
+    enum ValidationError: Error, CustomStringConvertible {
         /// When the number of words is less than or greater than two
         case invalidWordCount
         /// When a word contains non-alpha character
         case wordContainsNonAlphaCharacter
+        
+        var description: String {
+            switch self {
+            case .invalidWordCount: return "Error: Entry must contain two words: a first name and a last name"
+            case .wordContainsNonAlphaCharacter: return "Error: Entry must only contain letters"
+            }
+        }
     }
 }
 

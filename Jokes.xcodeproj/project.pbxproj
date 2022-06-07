@@ -13,10 +13,9 @@
 		8327E5DD284E536800957F17 /* JokeFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327E5DC284E536800957F17 /* JokeFetcher.swift */; };
 		8327E5DF284E566F00957F17 /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327E5DE284E566F00957F17 /* URLSession+Extensions.swift */; };
 		8327E5E2284E569400957F17 /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327E5E1284E569400957F17 /* Joke.swift */; };
-		8327E5E4284E56A700957F17 /* SingleJokeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327E5E3284E56A700957F17 /* SingleJokeResponse.swift */; };
 		8327E5E8284E589D00957F17 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327E5E7284E589D00957F17 /* Networking.swift */; };
 		8327E5EC284E600200957F17 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327E5EB284E600200957F17 /* HomeViewModel.swift */; };
-		8327E5EF284E639E00957F17 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327E5EE284E639E00957F17 /* HomeViewModelTests.swift */; };
+		8327E5EF284E639E00957F17 /* JokeAlertBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327E5EE284E639E00957F17 /* JokeAlertBuilderTests.swift */; };
 		8327E5F2284E63CE00957F17 /* NetworkingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327E5F1284E63CE00957F17 /* NetworkingMock.swift */; };
 		8327E5F7284E9CAE00957F17 /* JokeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327E5F6284E9CAE00957F17 /* JokeListViewController.swift */; };
 		8327E5F9284E9DCC00957F17 /* MultipleJokeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327E5F8284E9DCC00957F17 /* MultipleJokeResponse.swift */; };
@@ -64,10 +63,9 @@
 		8327E5DC284E536800957F17 /* JokeFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeFetcher.swift; sourceTree = "<group>"; };
 		8327E5DE284E566F00957F17 /* URLSession+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extensions.swift"; sourceTree = "<group>"; };
 		8327E5E1284E569400957F17 /* Joke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
-		8327E5E3284E56A700957F17 /* SingleJokeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleJokeResponse.swift; sourceTree = "<group>"; };
 		8327E5E7284E589D00957F17 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		8327E5EB284E600200957F17 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		8327E5EE284E639E00957F17 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		8327E5EE284E639E00957F17 /* JokeAlertBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeAlertBuilderTests.swift; sourceTree = "<group>"; };
 		8327E5F1284E63CE00957F17 /* NetworkingMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingMock.swift; sourceTree = "<group>"; };
 		8327E5F6284E9CAE00957F17 /* JokeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeListViewController.swift; sourceTree = "<group>"; };
 		8327E5F8284E9DCC00957F17 /* MultipleJokeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleJokeResponse.swift; sourceTree = "<group>"; };
@@ -136,7 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				8327E5E1284E569400957F17 /* Joke.swift */,
-				8327E5E3284E56A700957F17 /* SingleJokeResponse.swift */,
 				8327E5F8284E9DCC00957F17 /* MultipleJokeResponse.swift */,
 				8327E5FE284EA41B00957F17 /* MainCharacter.swift */,
 			);
@@ -163,7 +160,7 @@
 		8327E5ED284E639100957F17 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				8327E5EE284E639E00957F17 /* HomeViewModelTests.swift */,
+				8327E5EE284E639E00957F17 /* JokeAlertBuilderTests.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -503,7 +500,6 @@
 				8327E5EC284E600200957F17 /* HomeViewModel.swift in Sources */,
 				835E369C284E4E5F00A0B5C0 /* HomeViewController.swift in Sources */,
 				8327E5F7284E9CAE00957F17 /* JokeListViewController.swift in Sources */,
-				8327E5E4284E56A700957F17 /* SingleJokeResponse.swift in Sources */,
 				8327E5E8284E589D00957F17 /* Networking.swift in Sources */,
 				8327E5E2284E569400957F17 /* Joke.swift in Sources */,
 				835E3698284E4E5F00A0B5C0 /* AppDelegate.swift in Sources */,
@@ -518,7 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				835E36AF284E4E6100A0B5C0 /* JokeFetcherTests.swift in Sources */,
-				8327E5EF284E639E00957F17 /* HomeViewModelTests.swift in Sources */,
+				8327E5EF284E639E00957F17 /* JokeAlertBuilderTests.swift in Sources */,
 				835D216D284F82200084C59A /* MainCharacterEntryValidatorTests.swift in Sources */,
 				8327E5F2284E63CE00957F17 /* NetworkingMock.swift in Sources */,
 			);

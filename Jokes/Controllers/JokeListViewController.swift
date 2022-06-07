@@ -25,7 +25,7 @@ class JokeListViewController: UIViewController {
     }
     
     private func fetchJokes() {
-        fetcher.fetchJokes { [weak self] result in
+        fetcher.fetchJokes(using: JokeRequestConfiguration(count: 10)) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let newJokes): self.jokes.append(contentsOf: newJokes)

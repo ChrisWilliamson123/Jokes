@@ -15,8 +15,11 @@ class MainCharacterEntryValidatorTests: XCTestCase {
         let result = validator.validateEntry("")
         
         switch result {
-        case .success: XCTFail("Expected result to fail")
-        case .failure(let error): XCTAssertEqual(error, MainCharacterEntryValidator.ValidationError.invalidWordCount)
+        case .success:
+            XCTFail("Expected result to fail")
+        case .failure(let error):
+            XCTAssertEqual(error, MainCharacterEntryValidator.ValidationError.invalidWordCount)
+            XCTAssertEqual(error.description, "Error: Entry must contain two words: a first name and a last name")
         }
     }
     
@@ -24,8 +27,11 @@ class MainCharacterEntryValidatorTests: XCTestCase {
         let result = validator.validateEntry("John")
         
         switch result {
-        case .success: XCTFail("Expected result to fail")
-        case .failure(let error): XCTAssertEqual(error, MainCharacterEntryValidator.ValidationError.invalidWordCount)
+        case .success:
+            XCTFail("Expected result to fail")
+        case .failure(let error):
+            XCTAssertEqual(error, MainCharacterEntryValidator.ValidationError.invalidWordCount)
+            XCTAssertEqual(error.description, "Error: Entry must contain two words: a first name and a last name")
         }
     }
 
@@ -33,8 +39,11 @@ class MainCharacterEntryValidatorTests: XCTestCase {
         let result = validator.validateEntry("John Smith Junior")
         
         switch result {
-        case .success: XCTFail("Expected result to fail")
-        case .failure(let error): XCTAssertEqual(error, MainCharacterEntryValidator.ValidationError.invalidWordCount)
+        case .success:
+            XCTFail("Expected result to fail")
+        case .failure(let error):
+            XCTAssertEqual(error, MainCharacterEntryValidator.ValidationError.invalidWordCount)
+            XCTAssertEqual(error.description, "Error: Entry must contain two words: a first name and a last name")
         }
     }
     
@@ -42,8 +51,11 @@ class MainCharacterEntryValidatorTests: XCTestCase {
         let result = validator.validateEntry("John 5m1th")
         
         switch result {
-        case .success: XCTFail("Expected result to fail")
-        case .failure(let error): XCTAssertEqual(error, MainCharacterEntryValidator.ValidationError.wordContainsNonAlphaCharacter)
+        case .success:
+            XCTFail("Expected result to fail")
+        case .failure(let error):
+            XCTAssertEqual(error, MainCharacterEntryValidator.ValidationError.wordContainsNonAlphaCharacter)
+            XCTAssertEqual(error.description, "Error: Entry must only contain letters")
         }
     }
     

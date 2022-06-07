@@ -151,16 +151,28 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsl-vx-7SW">
+                                <rect key="frame" x="57" y="476" width="300" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Q8r-PK-4yy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dMz-YO-04J"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="8ue-E2-i1h" firstAttribute="centerX" secondItem="eea-4B-8yi" secondAttribute="centerX" id="VDl-oI-bQ1"/>
+                            <constraint firstItem="vsl-vx-7SW" firstAttribute="centerX" secondItem="eea-4B-8yi" secondAttribute="centerX" id="iRI-Ji-0wY"/>
+                            <constraint firstItem="vsl-vx-7SW" firstAttribute="top" secondItem="8ue-E2-i1h" secondAttribute="bottom" constant="8" id="j0W-Sd-Qae"/>
                             <constraint firstItem="8ue-E2-i1h" firstAttribute="centerY" secondItem="eea-4B-8yi" secondAttribute="centerY" id="j9Y-vF-smD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Text Input" id="ET5-Ku-PhX"/>
                     <connections>
+                        <outlet property="entryErrorLabel" destination="vsl-vx-7SW" id="vMh-p8-wbD"/>
                         <outlet property="searchBar" destination="OxG-uM-YHd" id="RYv-0z-gF9"/>
                         <outlet property="searchButton" destination="Wxy-EC-eAM" id="mMp-8G-leI"/>
                     </connections>
@@ -191,6 +203,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
