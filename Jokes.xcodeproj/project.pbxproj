@@ -20,6 +20,10 @@
 		8327E5F2284E63CE00957F17 /* NetworkingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327E5F1284E63CE00957F17 /* NetworkingMock.swift */; };
 		8327E5F7284E9CAE00957F17 /* JokeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327E5F6284E9CAE00957F17 /* JokeListViewController.swift */; };
 		8327E5F9284E9DCC00957F17 /* MultipleJokeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327E5F8284E9DCC00957F17 /* MultipleJokeResponse.swift */; };
+		8327E5FD284EA1D600957F17 /* MainCharacterEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327E5FC284EA1D600957F17 /* MainCharacterEntryViewController.swift */; };
+		8327E5FF284EA41B00957F17 /* MainCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327E5FE284EA41B00957F17 /* MainCharacter.swift */; };
+		8327E601284EA43C00957F17 /* MainCharacterEntryValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8327E600284EA43C00957F17 /* MainCharacterEntryValidator.swift */; };
+		835D216D284F82200084C59A /* MainCharacterEntryValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835D216C284F82200084C59A /* MainCharacterEntryValidatorTests.swift */; };
 		835E3698284E4E5F00A0B5C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835E3697284E4E5F00A0B5C0 /* AppDelegate.swift */; };
 		835E369A284E4E5F00A0B5C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835E3699284E4E5F00A0B5C0 /* SceneDelegate.swift */; };
 		835E369C284E4E5F00A0B5C0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835E369B284E4E5F00A0B5C0 /* HomeViewController.swift */; };
@@ -67,6 +71,10 @@
 		8327E5F1284E63CE00957F17 /* NetworkingMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingMock.swift; sourceTree = "<group>"; };
 		8327E5F6284E9CAE00957F17 /* JokeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeListViewController.swift; sourceTree = "<group>"; };
 		8327E5F8284E9DCC00957F17 /* MultipleJokeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleJokeResponse.swift; sourceTree = "<group>"; };
+		8327E5FC284EA1D600957F17 /* MainCharacterEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCharacterEntryViewController.swift; sourceTree = "<group>"; };
+		8327E5FE284EA41B00957F17 /* MainCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCharacter.swift; sourceTree = "<group>"; };
+		8327E600284EA43C00957F17 /* MainCharacterEntryValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCharacterEntryValidator.swift; sourceTree = "<group>"; };
+		835D216C284F82200084C59A /* MainCharacterEntryValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCharacterEntryValidatorTests.swift; sourceTree = "<group>"; };
 		835E3694284E4E5F00A0B5C0 /* Jokes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jokes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		835E3697284E4E5F00A0B5C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		835E3699284E4E5F00A0B5C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +138,7 @@
 				8327E5E1284E569400957F17 /* Joke.swift */,
 				8327E5E3284E56A700957F17 /* SingleJokeResponse.swift */,
 				8327E5F8284E9DCC00957F17 /* MultipleJokeResponse.swift */,
+				8327E5FE284EA41B00957F17 /* MainCharacter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -172,6 +181,7 @@
 			children = (
 				835E369B284E4E5F00A0B5C0 /* HomeViewController.swift */,
 				8327E5F6284E9CAE00957F17 /* JokeListViewController.swift */,
+				8327E5FC284EA1D600957F17 /* MainCharacterEntryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -208,6 +218,7 @@
 				835E3697284E4E5F00A0B5C0 /* AppDelegate.swift */,
 				835E3699284E4E5F00A0B5C0 /* SceneDelegate.swift */,
 				8327E5DE284E566F00957F17 /* URLSession+Extensions.swift */,
+				8327E600284EA43C00957F17 /* MainCharacterEntryValidator.swift */,
 				835E369D284E4E5F00A0B5C0 /* Main.storyboard */,
 				835E36A0284E4E6000A0B5C0 /* Assets.xcassets */,
 				835E36A2284E4E6000A0B5C0 /* LaunchScreen.storyboard */,
@@ -222,6 +233,7 @@
 				8327E5F0284E63BC00957F17 /* Mocks */,
 				8327E5ED284E639100957F17 /* View Models */,
 				835E36AE284E4E6100A0B5C0 /* JokeFetcherTests.swift */,
+				835D216C284F82200084C59A /* MainCharacterEntryValidatorTests.swift */,
 			);
 			path = JokesTests;
 			sourceTree = "<group>";
@@ -484,6 +496,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8327E5FF284EA41B00957F17 /* MainCharacter.swift in Sources */,
+				8327E5FD284EA1D600957F17 /* MainCharacterEntryViewController.swift in Sources */,
 				8327E5F9284E9DCC00957F17 /* MultipleJokeResponse.swift in Sources */,
 				8327E5DF284E566F00957F17 /* URLSession+Extensions.swift in Sources */,
 				8327E5EC284E600200957F17 /* HomeViewModel.swift in Sources */,
@@ -495,6 +509,7 @@
 				835E3698284E4E5F00A0B5C0 /* AppDelegate.swift in Sources */,
 				8327E5DD284E536800957F17 /* JokeFetcher.swift in Sources */,
 				835E369A284E4E5F00A0B5C0 /* SceneDelegate.swift in Sources */,
+				8327E601284EA43C00957F17 /* MainCharacterEntryValidator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +519,7 @@
 			files = (
 				835E36AF284E4E6100A0B5C0 /* JokeFetcherTests.swift in Sources */,
 				8327E5EF284E639E00957F17 /* HomeViewModelTests.swift in Sources */,
+				835D216D284F82200084C59A /* MainCharacterEntryValidatorTests.swift in Sources */,
 				8327E5F2284E63CE00957F17 /* NetworkingMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
