@@ -20,8 +20,8 @@ class JokeListViewController: UIViewController {
         fetchJokes()
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "jokeListTableViewCell")
-        
         tableView.dataSource = self
+        tableView.cellLayoutMarginsFollowReadableWidth = true
     }
     
     private func fetchJokes() {
