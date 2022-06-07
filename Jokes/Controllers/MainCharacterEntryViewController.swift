@@ -1,10 +1,12 @@
 import UIKit
 
-class MainCharacterEntryViewController: UIViewController {
+class MainCharacterEntryViewController: UIViewController, JokeExplicitnessProvider {
 
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var searchButton: UIButton!
     @IBOutlet private weak var entryErrorLabel: UILabel!
+    
+    var excludeExplicit = true
     
     private let fetcher = JokeFetcher()
     
@@ -36,7 +38,7 @@ class MainCharacterEntryViewController: UIViewController {
         switch validatedResult {
         case .success(let mainCharacter):
             entryErrorLabel.isHidden = true
-            let requestConfig = JokeRequestConfiguration(count: 1, mainCharacter: mainCharacter)
+            let requestConfig = JokeRequestConfiguration(count: 1, mainCharacter: mainCharacter, excludeExplicit: excludeExplicit)
             fetcher.fetchJokes(using: requestConfig) { [weak self] result in
                 guard let self = self else { return }
                 

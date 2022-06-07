@@ -3,9 +3,21 @@ import UIKit
 class HomeViewController: UIViewController {
     
     private let fetcher = JokeFetcher()
-
+    private var excludeExplicit = true {
+        didSet {
+            excludeExplicitButton.setTitle("Exclude Explicit: \(excludeExplicit)", for: .normal)
+        }
+    }
+    @IBOutlet private weak var excludeExplicitButton: UIButton!
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if var target = segue.destination as? JokeExplicitnessProvider {
+            target.excludeExplicit = excludeExplicit
+        }
+    }
+    
     @IBAction func didTapRandomJokeButton(_ sender: Any) {
-        fetcher.fetchJokes(using: JokeRequestConfiguration(count: 1)) { [weak self] result in
+        fetcher.fetchJokes(using: JokeRequestConfiguration(count: 1, excludeExplicit: excludeExplicit)) { [weak self] result in
             guard let self = self else { return }
             
             DispatchQueue.main.async {
@@ -14,6 +26,10 @@ class HomeViewController: UIViewController {
                 self.present(alert, animated: true)
             }
         }
+    }
+    
+    @IBAction func didTapExcludeExplicitButton(_ sender: Any) {
+        excludeExplicit.toggle()
     }
     
     private func createAlert(configuration: JokeAlertConfiguration) -> UIAlertController {

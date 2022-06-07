@@ -1,8 +1,13 @@
 import UIKit
 
-class JokeListViewController: UIViewController {
+protocol JokeExplicitnessProvider {
+    var excludeExplicit: Bool { get set }
+}
+
+class JokeListViewController: UIViewController, JokeExplicitnessProvider {
 
     @IBOutlet private weak var tableView: UITableView!
+    var excludeExplicit: Bool = true
     
     private let fetcher = JokeFetcher()
     /// Single jokes array acts as the view model
@@ -25,7 +30,7 @@ class JokeListViewController: UIViewController {
     }
     
     private func fetchJokes() {
-        fetcher.fetchJokes(using: JokeRequestConfiguration(count: 10)) { [weak self] result in
+        fetcher.fetchJokes(using: JokeRequestConfiguration(count: 10, excludeExplicit: excludeExplicit)) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let newJokes): self.jokes.append(contentsOf: newJokes)

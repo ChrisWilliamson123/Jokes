@@ -18,10 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dOx-oV-4AS">
-                                <rect key="frame" x="151.5" y="401.5" width="111.5" height="93"/>
+                                <rect key="frame" x="128" y="386" width="158.5" height="124"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dd4-qC-Fpn">
-                                        <rect key="frame" x="0.0" y="0.0" width="111.5" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="158.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Random Joke"/>
                                         <connections>
@@ -29,7 +29,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZR-UT-TqN">
-                                        <rect key="frame" x="0.0" y="31" width="111.5" height="31"/>
+                                        <rect key="frame" x="0.0" y="31" width="158.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Joke List"/>
                                         <connections>
@@ -37,11 +37,19 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bd-aC-Maj">
-                                        <rect key="frame" x="0.0" y="62" width="111.5" height="31"/>
+                                        <rect key="frame" x="0.0" y="62" width="158.5" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Text Input"/>
                                         <connections>
                                             <segue destination="1Ro-84-1Gj" kind="push" id="ys3-uv-BcY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omD-il-J3s">
+                                        <rect key="frame" x="0.0" y="93" width="158.5" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Exclude Explicit: true"/>
+                                        <connections>
+                                            <action selector="didTapExcludeExplicitButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TDs-Ny-iFm"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -55,6 +63,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Jokes" id="kUy-AQ-Zfo"/>
+                    <connections>
+                        <outlet property="excludeExplicitButton" destination="omD-il-J3s" id="r5b-02-5bt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
