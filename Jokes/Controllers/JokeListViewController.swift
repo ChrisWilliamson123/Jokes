@@ -1,9 +1,5 @@
 import UIKit
 
-protocol JokeExplicitnessProvider {
-    var excludeExplicit: Bool { get set }
-}
-
 class JokeListViewController: UIViewController, JokeExplicitnessProvider {
 
     @IBOutlet private weak var tableView: UITableView!
