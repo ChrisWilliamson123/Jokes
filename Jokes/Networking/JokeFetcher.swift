@@ -7,7 +7,8 @@ struct JokeFetcher {
         self.networking = networking
     }
     
-    func fetchJokes(using configuration: JokeRequestConfiguration, completion: @escaping (Result<[Joke], Error>) -> ()) {
+    func fetchJokes(using configuration: JokeRequestConfiguration,
+                    completion: @escaping (Result<[Joke], Error>) -> ()) {
         networking.fetchData(for: configuration.url) { (result: Result<MultipleJokeResponse, Error>) in
             switch result {
             case .success(let response): completion(.success(response.value))

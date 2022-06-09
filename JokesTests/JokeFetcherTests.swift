@@ -26,7 +26,9 @@ class JokeFetcherTests: XCTestCase {
     }
     
     func testFetchJokes_givenNetworkFails_completesWithError() {
-        networking.nextResponse = .failure(NSError(domain: "", code: 500, userInfo: [ NSLocalizedDescriptionKey: "Server error"]))
+        networking.nextResponse = .failure(NSError(domain: "",
+                                                   code: 500,
+                                                   userInfo: [ NSLocalizedDescriptionKey: "Server error"]))
         
         let fetcher = JokeFetcher(networking: networking)
         fetcher.fetchJokes(using: JokeRequestConfiguration(count: 1)) { result in

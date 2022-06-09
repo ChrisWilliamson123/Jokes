@@ -27,7 +27,9 @@ class MainCharacterEntryViewController: UIViewController, JokeExplicitnessProvid
         switch validatedResult {
         case .success(let mainCharacter):
             entryErrorLabel.isHidden = true
-            let requestConfig = JokeRequestConfiguration(count: 1, mainCharacter: mainCharacter, excludeExplicit: excludeExplicit)
+            let requestConfig = JokeRequestConfiguration(count: 1,
+                                                         mainCharacter: mainCharacter,
+                                                         excludeExplicit: excludeExplicit)
             fetcher.fetchJokes(using: requestConfig) { [weak self] result in
                 guard let self = self else { return }
                 

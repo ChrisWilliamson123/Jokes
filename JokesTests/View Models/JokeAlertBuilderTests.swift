@@ -15,7 +15,8 @@ class JokeAlertBuilderTests: XCTestCase {
         let alertConfiguration = JokeAlertConfiguration.build(from: result)
         
         XCTAssertEqual(alertConfiguration.title, "Random Joke Error")
-        XCTAssertEqual(alertConfiguration.text, "Sorry, an error occured while fetching a random joke. Please try again later.")
+        XCTAssertEqual(alertConfiguration.text,
+                       "Sorry, an error occured while fetching a random joke. Please try again later.")
     }
 }
 
