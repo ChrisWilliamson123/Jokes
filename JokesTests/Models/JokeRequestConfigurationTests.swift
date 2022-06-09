@@ -20,7 +20,7 @@ class JokeRequestConfigurationTests: XCTestCase {
     
     func testUrl_givenACountAndTrueExcludeExplicitAndAMainCharacter_returnsExpectedURL() {
         let mainCharacter = MainCharacter(firstName: "James", lastName: "Bond")
-        let config = JokeRequestConfiguration(count: 5, mainCharacter: mainCharacter, excludeExplicit: false)
+        let config = JokeRequestConfiguration(count: 5, mainCharacter: mainCharacter, excludeExplicit: true)
         
         let url = config.url
 
